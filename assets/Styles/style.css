@@ -1,0 +1,232 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #f1f1f1;
+}
+body {
+    background-image: url(https://i.pinimg.com/originals/6f/44/75/6f44754fc1ad3aafc1821b88edd7168a.gif);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f1f1f1;
+    font-family: 'Poppins', sans-serif;
+}
+.window {
+    position: relative;
+    width: 1240px;
+    height: 560px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 32px;
+    backdrop-filter: blur(16px);
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0,0,0,0.8);
+
+    .winCover {
+        background-color: #032126;
+        box-shadow: 0 0 20px rgba(0,0,0,0.8);
+        width: 50%;
+        height: 100%;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        right: 0;
+        color: #f1f1f1;
+        transition: transform 0.5s;
+
+        .header {
+            width: 100%;
+            height: 20%;
+            display: flex;
+            justify-content: center;
+            align-items: center;     
+            h1 {
+                font-size: 2.4rem;
+                font-weight: 600;
+            }
+        }
+        .body {
+            width: 100%;
+            padding: 0 15%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            p {
+                font-size: 1.2rem;
+                text-align: center;
+            }
+
+            button {
+                width: 80%;    
+                margin: 28px 0; 
+                padding: 10px;
+                background-color: transparent;
+                border: 2px solid #f1f1f1;
+                border-radius: 32px;
+                color: #f1f1f1;
+                cursor: pointer;
+                transition: background-color 0.3s;
+                &:hover {
+                    background-color: #f1f1f1;
+                    color: #111111;
+                }
+            }       
+        }
+    }
+
+    .winLogin, .winSignup {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        
+        .header {
+            width: 100%;
+            height: 30%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            h1 {
+                font-size: 2.4rem;
+                font-weight: 600;
+            }
+        }
+
+        .body {
+            width: 100%;
+            padding: 0 15%;
+
+            form {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 32px;
+
+                .input-box {
+                    position: relative;
+                    width: 100%;
+                    padding: 0 16px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-bottom: 1px solid #798B90;
+
+
+                    input {
+                        top: -16px;
+                        width: 100%;
+                        padding: 10px;
+                        background-color: transparent;
+                        border: none;
+                        outline: none;
+                      
+                        &:focus ~ label, &:not(:placeholder-shown):not(:focus) ~ label {
+                          top: -16px;
+                          font-size: 0.9rem;
+                        }
+                      }
+                      
+
+                    label {
+                        position: absolute;
+                        top: 10px;
+                        left: 16px;
+                        font-size: 1rem;
+                        color: #B2B2B2;
+                        pointer-events: none;
+                        transition: 0.5s;
+                    }
+
+                    span {
+                        font-size: 2rem;
+                        margin: 0 0 0 6px;
+                    }
+                }
+                .buttons {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    width: 100%;
+                    label {
+                        font-size: 1rem;
+                        cursor: pointer;
+                    }
+                }
+                button {
+                    width: 60%;
+                    padding: 10px;
+                    border: none;
+                    border-radius: 32px;
+                    background-color: #0098B7;
+                    cursor: pointer;
+                    transition: background-color 0.3s;
+                    &:hover {
+                        filter: brightness(1.1);
+                    }     
+                }
+            }
+
+            .socMed {
+                width: 100%;
+                margin-top: 30px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 54px;
+
+                .logoBx {
+                    width: 48px;
+                    height: 48px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 24px;
+                    background-color: transparent;
+                    box-shadow: 0 0 6px rgba(0,0,0,0.3);
+                    padding: 8px;
+                    cursor: pointer;
+                    transition: transform 0.3s;
+
+                    img {
+                        width: 28px;
+                        filter: invert(0.7);
+                    }
+
+                    &:hover {
+                        transform: scale(1.1);
+
+                        img {
+                            filter: invert(1);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .winSignup {
+        .header {
+            height: 25%;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .window {
+        transform: scale(0.4);
+    }
+}
